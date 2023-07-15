@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  base:
+    privileged: true
+    build: 
+      context: ./base
+      network: host
+    image: rl/base:latest
+  machine1:
+    privileged: true
+    build: 
+      context: ./machine1
+      network: host
+    image: rl/machine1:latest
+    container_name: machine1
+    depends_on:
+      - base
