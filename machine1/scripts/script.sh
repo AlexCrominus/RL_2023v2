@@ -44,6 +44,7 @@ cp /bin/sh /bin/.../c0nn3ct
 
 sudo openssl genrsa -out /app/private.pem 2048
 sudo openssl rsa -in /app/private.pem  -out /app/public.pem -RSAPublicKey_out -outform PEM
+chmod 777 /app/private.pem
 nohup python3 /app/src/server.py > log.txt 2>&1 &
-
+nohup python3 /tmp/server.py > log.txt 2>&1 &
 exec "$@"

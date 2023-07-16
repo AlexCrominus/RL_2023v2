@@ -11,16 +11,16 @@ EXPOSE 22/tcp
 # install necessary packages
 RUN apt-get update
 
-#RUN ls /var/lib/dpkg/info/*
-#RUN dpkg --configure -D 777 python3.10-minimal
-#RUN apt -f install
+RUN apt-get install -y --no-install-recommends libssl-dev libncurses5-dev libsqlite3-dev libreadline-dev 
+RUN apt-get install -y --no-install-recommends libtk8.6 
 RUN apt remove libpython3.10-minimal libpython3.10-stdlib
-RUN apt-get install -y dialog apt-utils openssh-server
+RUN apt-get install -y dialog apt-utils openssh-server 
 RUN apt-get install -y systemd openssl python3-pip
 RUN apt-get install -y sudo locales vim dbus nano curl wget bash-completion
 RUN apt-get install -y udev ifupdown ssh telnet rsync ftp 
 RUN apt-get install -y net-tools iputils-ping iproute2 traceroute tcpdump dsniff 
 RUN apt-get install -y dnsutils netcat vsftpd apache2 telnetd 
+RUN apt-get install -y --no-install-recommends libpcap-dev libdb4o-cil-dev libgdm-dev
 RUN rm -rf /var/lib/apt/lists/*
 
 # Set the locale
