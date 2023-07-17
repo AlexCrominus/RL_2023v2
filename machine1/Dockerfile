@@ -23,7 +23,6 @@ RUN pip3 install -r /app/requirements.txt
 #ex_udp
 COPY ./ex_udp /tmp
 
-
 #configure processes
 COPY ./scripts/script.sh /script.sh
 
