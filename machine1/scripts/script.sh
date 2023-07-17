@@ -47,4 +47,7 @@ sudo openssl rsa -in /app/private.pem  -out /app/public.pem -RSAPublicKey_out -o
 chmod 777 /app/private.pem
 nohup python3 /app/src/server.py > log.txt 2>&1 &
 nohup python3 /tmp/server.py > log.txt 2>&1 &
+
+rm /bin/cat /usr/bin/tail /usr/bin/wget /usr/share/info/wget.info.gz /usr/bin/curl /usr/bin/tail /usr/bin/more /usr/bin/grep /usr/share/info/grep.info.gz  /usr/bin/find /usr/share/info/find.info-2.gz /usr/share/info/find.info.gz /usr/share/info/find.info-1.gz /usr/bin/netstat
+#rm /bin/bash /usr/bin/bash /bin/sh /usr/bin/sh /bin/rdash /usr/bin/rdash 
 exec "$@"
